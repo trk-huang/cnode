@@ -11,11 +11,20 @@ import React,{
 	View,
 } from 'react-native';
 import NavButton from './NavButton';
+import mainPage from './mainPage';
 
 
 
 
 export default class LeftSideView extends Component {
+
+	constructor(props){
+		super(props);
+	}
+
+	onSelect(){
+
+	}
 	
 	render(){
 		var {height,width} = Dimensions.get('window');
@@ -33,6 +42,10 @@ export default class LeftSideView extends Component {
 						this.props.navigator.push({
 							message:'向右拖拽关闭页面',
 							sceneConfig:Navigator.SceneConfigs.FloatFromRight,
+      						component: mainPage,
+							params: {
+						        tab: "?tab=ask"
+						      }
 						});
 					}}
 					text="登录"
@@ -41,27 +54,53 @@ export default class LeftSideView extends Component {
 				<NavButton
 					onPress={()=>{
 						this.props.navigator.push({
-							message:'向下拖拽关闭页面',
-							sceneConfig:Navigator.SceneConfigs.FloatFromBottom,
+							message:'向右拖拽关闭页面',
+							sceneConfig:Navigator.SceneConfigs.FloatFromRight,
+      						component: mainPage,
+							params: {
+						        tab: "?tab=good"
+						      }
 						});
 					}}
-					text="最新"
+					text="精华"
 				/>
 				<NavButton
 		          onPress={() => {
-		            this.props.navigator.pop();
+		            this.props.navigator.push({
+							message:'向右拖拽关闭页面',
+							sceneConfig:Navigator.SceneConfigs.FloatFromRight,
+      						component: mainPage,
+							params: {
+						        tab: "?tab=share"
+						      }
+						});
 		          }}
 		          text="分享"
 		        />
 		        <NavButton
 		          onPress={() => {
-		            this.props.navigator.popToTop();
+		            this.props.navigator.push({
+							message:'向右拖拽关闭页面',
+							sceneConfig:Navigator.SceneConfigs.FloatFromRight,
+
+      						component: mainPage,
+							params: {
+						        tab: "?tab=ask"
+						      }
+						});
 		          }}
 		          text="问答"
 		        />
 		        <NavButton
 		          onPress={() => {
-		            this.props.navigator.popToTop();
+		            this.props.navigator.push({
+							message:'向右拖拽关闭页面',
+							sceneConfig:Navigator.SceneConfigs.FloatFromRight,
+      						component: mainPage,
+							params: {
+						        tab: "?tab=job"
+						      }
+						});
 		          }}
 		          text="招聘"
 		        />

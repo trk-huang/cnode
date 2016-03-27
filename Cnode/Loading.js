@@ -57,7 +57,7 @@ export default class LoadingView extends React.Component{
 	componentDidMount(){
 		this.timer = setTimeout(()=>{
 			this.jumpToMainPage();
-		},5000);
+		},2000);
 	}
 
 	componentWillUnmount(){
